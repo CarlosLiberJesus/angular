@@ -1,0 +1,6 @@
+# husky/pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run lint-staged for js|json files
+npx lint-staged
