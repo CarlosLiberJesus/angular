@@ -23,13 +23,12 @@
   "scripts": {
     "lint": "eslint frontend/src/**/*.{ts,html,scss} --fix",
     "format": "prettier --write frontend/src/**/*.{ts,html,scss}",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "frontend/src/**/*.{ts,html,scss}": [
       "prettier --write",
-      "tslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }
