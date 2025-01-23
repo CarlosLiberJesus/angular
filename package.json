@@ -1,9 +1,10 @@
 {
   "name": "angular-root",
   "private": true,
-  "workspaces": [
-    "frontend"
-  ],
+  "workspaces": {
+    "packages": ["frontend"],
+    "nohoist": ["frontend/**"]
+  },
   "devDependencies": {
     "@angular-eslint/eslint-plugin": "^19.0.2",
     "@angular-eslint/eslint-plugin-template": "^19.0.2",
@@ -18,7 +19,8 @@
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "@cspell/dict-pt-pt": "^3.0.4"
   },
   "scripts": {
     "lint": "eslint frontend/src/**/*.{ts,html,scss} --fix",
@@ -26,9 +28,6 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "frontend/src/**/*.{ts,html,scss}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
+    "frontend/src/**/*.{ts,html,scss}": ["prettier --write", "eslint --fix"]
   }
 }

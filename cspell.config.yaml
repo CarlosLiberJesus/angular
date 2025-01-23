@@ -1,0 +1,31 @@
+version: "0.2"
+language: en,pt_PT
+ignorePaths:
+  - node_modules/**
+  - vendor/**
+  - dist/**
+  - build/**
+  - .git/**
+  - .vscode/**
+  - -husky/**
+  - backend/vendor/**
+dictionaryDefinitions:
+  - name: en_US
+    path: ./dictionaries/en_US.txt
+  - name: pt_PT
+    path: ./dictionaries/pt_PT.txt
+dictionaries:
+  - en_US
+  - pt_PT
+words:
+  - metronic
+ignoreWords: []
+import:
+  - node_modules/@cspell/dict-pt-pt/cspell-ext.json
+overrides:
+  - filename: "**/*.blade.php"
+    language: en,pt_PT
+    ignoreRegExpList:
+      - /<[^>]*>/g
+      - /{{[^}]*}}/g
+      - /@[^\s]+/g
