@@ -30,12 +30,12 @@
               },
               {
                 "glob": "**/*",
-                "input": "@carlosliberjesus/lib-metronic/src/assets",
+                "input": "node_modules/@carlosliberjesus/lib-metronic/src/assets",
                 "output": "assets/metronic"
               }
             ],
             "styles": [
-              "@carlosliberjesus/lib-metronic/src/assets/sass/metronic.scss",
+              "node_modules/@carlosliberjesus/lib-metronic/src/assets/sass/metronic.scss",
               "src/styles.scss"
             ],
             "scripts": []
