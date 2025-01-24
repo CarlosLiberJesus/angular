@@ -1,1 +1,56 @@
-<app-metronic-documentation></app-metronic-documentation>
+<!--begin::App-->
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+  <!--begin::Page-->
+  <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+    <!--begin::Header-->
+    <app-template-header
+      id="kt_app_header"
+      class="app-header"
+      data-kt-sticky="true"
+      data-kt-sticky-activate="{default: true, lg: true}"
+      data-kt-sticky-name="app-header-minimize"
+      data-kt-sticky-offset="{default: '200px', lg: '0'}"
+      data-kt-sticky-animation="false">
+    </app-template-header>
+    <!--end::Header-->
+
+    <!--begin::Wrapper-->
+    <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+      <!--begin::sidebar-->
+      <app-template-side-bar
+        #ktSidebar
+        id="kt_app_sidebar"
+        class="app-sidebar flex-column">
+      </app-template-side-bar>
+      <!--end::sidebar-->
+
+      <!--begin::Main-->
+      <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <!--begin::Content wrapper-->
+        <div class="d-flex flex-column flex-column-fluid">
+          <app-template-tool-bar
+            class="app-toolbar py-3 py-lg-6"
+            [ngClass]=""
+            id="kt_app_toolbar"
+            [appToolbarLayout]="'none'"></app-template-tool-bar>
+
+          <app-template-content id=" kt_app_content" class="app-content">
+          </app-template-content>
+        </div>
+        <!--end::Content wrapper-->
+        <app-template-footer
+          class="app-footer"
+          id="kt_app_footer"></app-template-footer>
+      </div>
+      <!--end:::Main-->
+    </div>
+    <!--end::Wrapper-->
+  </div>
+  <!--end::Page-->
+</div>
+<!--end::App-->
+
+<app-template-scroll-top
+  id="kt_scrolltop"
+  class="scrolltop kt_scrolltop"
+  data-kt-scrolltop="true"></app-template-scroll-top>
