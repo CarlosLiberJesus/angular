@@ -9,4 +9,4 @@ import { MetronicDocumentationComponent } from '@carlosliberjesus/lib-metronic';
   styleUrl: './metronic.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MetronicComponent {}
+export class PublicPageDocumentationMetronicComponent {}

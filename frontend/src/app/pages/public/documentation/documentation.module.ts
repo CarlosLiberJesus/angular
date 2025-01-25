@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MetronicComponent } from './metronic/metronic.component';
+import { PublicPageDocumentationMetronicComponent } from './metronic/metronic.component';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, MetronicComponent],
-  exports: [MetronicComponent],
+  imports: [CommonModule, PublicPageDocumentationMetronicComponent],
+  exports: [PublicPageDocumentationMetronicComponent],
 })
 export class DocumentationModule {}

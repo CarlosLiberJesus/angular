@@ -1,0 +1,40 @@
+<!--begin::Theme mode-->
+<div class="app-navbar-item ms-1 ms-lg-3">
+  <!-- TODO
+  o que seria isto ?
+  toggleBtnClass="{`btn-active-light-primary btn-custom ${toolbarButtonHeightClass}`}"
+  -->
+  <app-theme-switcher
+    [toggleBtnClass]="'btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px w-md-40px h-md-40px'"></app-theme-switcher>
+</div>
+<!--end::Theme mode-->
+
+<!--begin::User menu-->
+<div class="app-navbar-item ms-1 ms-lg-3">
+  <!--begin::Menu wrapper-->
+  <div
+    class="cursor-pointer symbol symbol-35px symbol-md-40px"
+    data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+    data-kt-menu-attach="parent"
+    data-kt-menu-placement="bottom-end">
+    <img src="./assets/metronic/media/avatars/blank.png" />
+  </div>
+  <!-- TODO
+  <app-user-inner data-kt-menu='true'></app-user-inner>
+  -->
+  <!--end::Menu wrapper-->
+</div>
+<!--end::User menu-->
+
+<!--begin::Header menu toggle-->
+<div class="app-navbar-item d-lg-none ms-2 me-n3" title="Show header menu">
+  <div
+    class="btn btn-icon btn-active-color-primary w-35px h-35px"
+    id="kt_app_header_menu_toggle">
+    <span class="fs-1 element-4 ki-duotone">
+      <span class="path1"></span>
+      <span class="path2"></span>
+    </span>
+  </div>
+</div>
+<!--end::Header menu toggle-->

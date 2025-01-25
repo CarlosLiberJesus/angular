@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TemplateModule } from './template/template.module';
+import { TemplateModule } from './layout/template/template.module';
 
 @Component({
   selector: 'app-root',

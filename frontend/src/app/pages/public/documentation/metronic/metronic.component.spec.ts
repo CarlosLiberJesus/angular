@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MetronicComponent } from './metronic.component';
+import { PublicPageDocumentationMetronicComponent } from './metronic.component';
 
-describe('MetronicComponent', () => {
-  let component: MetronicComponent;
-  let fixture: ComponentFixture<MetronicComponent>;
+describe('PublicPageDocumentationMetronicComponent', () => {
+  let component: PublicPageDocumentationMetronicComponent;
+  let fixture: ComponentFixture<PublicPageDocumentationMetronicComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MetronicComponent],
+      imports: [PublicPageDocumentationMetronicComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MetronicComponent);
+    fixture = TestBed.createComponent(PublicPageDocumentationMetronicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

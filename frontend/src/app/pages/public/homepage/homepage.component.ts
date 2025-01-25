@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './homepage.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomepageComponent {}
+export class PublicPageHomepageComponent {}
