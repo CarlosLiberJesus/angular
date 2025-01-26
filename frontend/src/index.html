@@ -16,23 +16,34 @@
       rel="stylesheet" />
   </head>
   <body
-    root=""
     id="kt_app_body"
     class="app-default"
-    _nghost-ng-c1648693635=""
-    ng-version="18.1.4"
-    style=""
     data-kt-app-layout="dark-sidebar"
-    data-kt-name="metronic"
-    data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true"
-    data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true"
-    data-kt-app-sidebar-enabled="true"
-    data-kt-app-sidebar-fixed="true"
-    data-kt-app-toolbar-enabled="true"
-    data-kt-app-header-minimize="on">
+    data-kt-name="metronic">
+    <!--begin::Theme mode setup on page load-->
+    <script>
+      if (document.documentElement) {
+        var defaultThemeMode = 'system';
+
+        var hasKTName = document.body.hasAttribute('data-kt-name');
+        var lsKey = 'kt_' + (hasKTName ? name + '_' : '') + 'theme_mode_value';
+        var themeMode = localStorage.getItem(lsKey);
+        if (!themeMode) {
+          if (defaultThemeMode === 'system') {
+            themeMode = window.matchMedia('(prefers-color-scheme: dark)')
+              .matches
+              ? 'dark'
+              : 'light';
+          } else {
+            themeMode = defaultThemeMode;
+          }
+        }
+
+        document.documentElement.setAttribute('data-bs-theme', themeMode);
+      }
+    </script>
+    <!--end::Theme mode setup on page load-->
+
     <app-root></app-root>
   </body>
 </html>

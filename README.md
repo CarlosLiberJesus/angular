@@ -1,5 +1,5 @@
 # angular
-A aplicação que vamos estar a expôr
+A aplicação que vai estar a correr no front-end dos utilizadores
 
 ## Requirements
 
@@ -13,13 +13,18 @@ A aplicação que vamos estar a expôr
 Don't forget to check official documentation
 https://preview.keenthemes.com/html/metronic/docs/
 
+## Setting up in new project
+
+This Project is still not 100% GNU, you wont be able to run install due to private package, you need to get a read key from the team, or wait for 100% bootstrap template
+
+- Follow Package README.md to set as authorized package
+  
 ## Installation
 
 1. Clone the repository:
    ```sh
    git clone https://github.com/CarlosLiberJesus/angular.git
    ```
-   - Note: You'll need your on artisan file
 2. Navigate to the project directory:
    ```sh
    cd template
@@ -29,55 +34,8 @@ https://preview.keenthemes.com/html/metronic/docs/
    yarn install  # eslint
    cd metronic/
    yarn install
-   cd projects/lib-metronic/
-   yarn install
    ```
-4. Ensure you have the git credencial key
-
-## Setting up in new project
-
-1. Ensure you have the git credendial key
-   ```sh
-   registry=https ://npm.pkg.github.com --scope=@carlosliberjesus
-   cat ~.npmrc
-   ```
-2. Install package:
-   ```sh
-   npm install @carlosliberjesus/lib-metronic
-   ```
-3. Set up angular.json
-   ```json
-   "assets": [
-        {
-        "glob": "**/*",
-        "input": "public"
-        },
-        {
-        "glob": "**/*",
-        "input": "node_modules/@carlosliberjesus/lib-metronic/src/assets",
-        "output": "assets/metronic"
-        }
-    ],
-    "styles": [
-        "src/styles.scss",
-        "node_modules/@carlosliberjesus/lib-metronic/src/assets/sass/metronic.scss"
-    ],
-   ```
-   #### Don't forget to use assets
-   ```html
-   <img src="/assets/metronic/media/logos/custom-1.png" alt="Custom Image" />
-   ```
-4. Set up Animations, [text](src/app/app.config.ts)
-   ```ts
-   export const appConfig: ApplicationConfig = {
-     providers: [
-      //...
-      provideAnimations(),
-   ```
-5. Set up "colors" in index.html edit
-   ```html
-   <html lang="pt" data-bs-theme="light">
-   ```
+   1. Ensure you have the git credencial key
 
 ## Log History
 
