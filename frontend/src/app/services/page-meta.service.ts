@@ -29,6 +29,7 @@ export class PageMetaService {
   constructor() {}
 
   public setTitle(_title: string) {
+    console.log('setTitle', _title);
     this.title.next(_title);
   }
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TemplateSideBarLogoComponent } from './side-bar-logo/side-bar-logo.component';
 import { TemplateSideBarFooterComponent } from './side-bar-footer/side-bar-footer.component';
 import { TemplateSideBarMenuComponent } from './side-bar-menu/side-bar-menu.component';
@@ -16,6 +16,8 @@ import { TemplateSideBarMenuComponent } from './side-bar-menu/side-bar-menu.comp
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TemplateSideBarComponent implements OnInit {
+  @Output() closeMobileMenu = new EventEmitter<void>();
+  
   ngOnInit(): void {
     document.body.setAttribute('data-kt-app-sidebar-hoverable', 'true');
     document.body.setAttribute('data-kt-app-sidebar-push-header', 'true');
@@ -25,5 +27,9 @@ export class TemplateSideBarComponent implements OnInit {
     document.body.setAttribute('data-kt-app-sidebar-fixed', 'true');
     document.body.setAttribute('data-kt-app-toolbar-enabled', 'true');
     document.body.setAttribute('data-kt-app-header-minimize', 'on');
+  }
+
+  onMobileMenuClose(): void {
+    this.closeMobileMenu.emit();
   }
 }

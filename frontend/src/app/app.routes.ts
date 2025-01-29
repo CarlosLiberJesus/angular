@@ -4,5 +4,11 @@ import { PublicPageDocumentationMetronicComponent } from './pages/public/documen
 
 export const routes: Routes = [
   { path: '', component: PublicPageHomepageComponent },
-  { path: 'metronic', component: PublicPageDocumentationMetronicComponent },
+  {
+    path: 'documentacao',
+    loadChildren: () =>
+      import('./pages/public/documentation/documentation.module').then(
+        m => m.DocumentationModule
+      ),
+  },
 ];

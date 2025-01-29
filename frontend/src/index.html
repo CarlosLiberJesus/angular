@@ -6,9 +6,6 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!--link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet" /-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,20 +16,19 @@
     <!--begin::Theme mode setup on page load-->
     <script>
       if (document.documentElement) {
-        var defaultThemeMode = 'system';
-
-        var lsKey = 'theme_value';
+        const defaultThemeMode = 'system';
+        const lsKey = 'theme_value';
         var themeMode = localStorage.getItem(lsKey);
         if (!themeMode) {
-          if (defaultThemeMode === 'system') {
-            themeMode = window.matchMedia('(prefers-color-scheme: dark)')
-              .matches
-              ? 'dark'
-              : 'light';
-          } else {
-            themeMode = defaultThemeMode;
-          }
+          themeMode = defaultThemeMode;
+          localStorage.setItem(lsKey, defaultThemeMode);
         }
+        if (themeMode === 'system') {
+          themeMode = window.matchMedia('(prefers-color-scheme: dark)')
+            .matches
+            ? 'dark'
+            : 'light';
+        } 
 
         document.documentElement.setAttribute('data-bs-theme', themeMode);
       }

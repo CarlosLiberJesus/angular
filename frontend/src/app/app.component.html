@@ -10,7 +10,8 @@
       data-kt-sticky-activate="{default: true, lg: true}"
       data-kt-sticky-name="app-header-minimize"
       data-kt-sticky-offset="{default: '200px', lg: '0'}"
-      data-kt-sticky-animation="false">
+      data-kt-sticky-animation="false"
+      (openMobileMenu)="onOpenMobileMenu()">
     </app-template-header>
     <!--end::Header-->
 
@@ -20,7 +21,8 @@
       <app-template-side-bar
         #ktSidebar
         id="kt_app_sidebar"
-        class="app-sidebar flex-column">
+        [ngClass]="getSideBarClass()"
+        (closeMobileMenu)="onCloseMobileMenu()">
       </app-template-side-bar>
       <!--end::sidebar-->
 
@@ -51,4 +53,7 @@
 <app-template-scroll-top
   id="kt_scrolltop"
   class="scrolltop kt_scrolltop"
-  data-kt-scrolltop="true"></app-template-scroll-top>
+  data-kt-scrolltop="true"
+  (click)="scrollToTop()"
+  (keydown)="scrollToTop()"
+  tabindex="1"></app-template-scroll-top>

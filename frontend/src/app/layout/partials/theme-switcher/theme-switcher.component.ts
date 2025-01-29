@@ -37,6 +37,15 @@ export class ThemeSwitcherComponent {
     this.setTheme();
   }
 
+  translateThemeName(theme: string): string {
+    if (theme === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    }
+    return theme;
+  }
+
   setTheme(): void {
     this.themeIcon = {
       css: [
@@ -44,7 +53,7 @@ export class ThemeSwitcherComponent {
       ],
       iconFirst: {
         library: 'ki-duotone',
-        value: this.themeName === 'dark' ? 'ki-moon' : 'ki-night-day',
+        value: this.translateThemeName(this.themeName) === 'dark' ? 'ki-moon' : 'ki-night-day',
         css: ['fs-1'],
       },
     };
