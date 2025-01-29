@@ -5,7 +5,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { PageLink, PageMetaService } from '../../../services/page-meta.service';
 import { CommonModule } from '@angular/common';
 
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageTitleComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
+  private destroy$: Subject<boolean> = new Subject<boolean>();
 
   @Input() appPageTitleDirection: string = '';
 
@@ -30,12 +30,19 @@ export class PageTitleComponent implements OnInit, OnDestroy {
   constructor(private pageMeta: PageMetaService) {}
 
   ngOnInit(): void {
-    this.title$ = this.pageMeta.title.asObservable();
-    this.description$ = this.pageMeta.description.asObservable();
-    this.bc$ = this.pageMeta.breadcrumbs.asObservable();
+    this.title$ = this.pageMeta.title
+      .asObservable()
+      .pipe(takeUntil(this.destroy$));
+    this.description$ = this.pageMeta.description
+      .asObservable()
+      .pipe(takeUntil(this.destroy$));
+    this.bc$ = this.pageMeta.breadcrumbs
+      .asObservable()
+      .pipe(takeUntil(this.destroy$));
   }
 
   ngOnDestroy() {
-    this.unsubscribe.forEach(sb => sb.unsubscribe());
+    this.destroy$.next(true);
+    this.destroy$.complete();
   }
 }

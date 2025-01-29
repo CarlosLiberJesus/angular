@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MetronicDocumentationComponent } from '@carlosliberjesus/lib-metronic';
 
 @Component({
-  selector: 'app-metronic',
+  selector: 'app-page-documentation-metronic',
   standalone: true,
   imports: [MetronicDocumentationComponent],
   templateUrl: './metronic.component.html',
