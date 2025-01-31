@@ -1,3 +1,52 @@
-<div id="kt_app_content_container" class="app-container container-fluid">
+<div class="d-lg-none">
+  <div class="app-container container-fluid">
+    <!--begin::Alert-->
+    <div
+      class="alert alert-dismissible bg-light-warning d-flex flex-column flex-sm-row p-5">
+      <!--begin::Icon-->
+      <i
+        class="ki-duotone ki-notification-bing fs-2hx text-warning me-4 mb-5 mb-sm-0">
+        <span class="path1"></span>
+        <span class="path2"></span><span class="path3"></span>
+      </i>
+      <!--end::Icon-->
+
+      <!--begin::Wrapper-->
+      <div class="d-flex flex-column pe-0 pe-sm-10">
+        <!--begin::Title-->
+        <h4 class="fw-semibold">Baixa Resolução</h4>
+        <!--end::Title-->
+
+        <!--begin::Content-->
+        <span>
+          Tentamos que minização de conteúdo seja a mais eficiente possível,
+          apesar recomendamos que utilize um dispositivo com uma resolução
+          superior a 1024px para uma melhor experiência.
+        </span>
+        <!--end::Content-->
+      </div>
+      <!--end::Wrapper-->
+
+      <!--begin::Close-->
+      <button
+        type="button"
+        class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
+        (click)="closeAlert()"
+        (keydown)="closeAlert()"
+        tabindex="0"
+        data-bs-dismiss="alert">
+        <i class="ki-duotone ki-cross fs-1 text-warning"
+          ><span class="path1"></span><span class="path2"></span
+        ></i>
+      </button>
+      <!--end::Close-->
+    </div>
+    <!--end::Alert-->
+  </div>
+</div>
+<div
+  id="kt_app_content_container"
+  class="app-container container-fluid mb-3 mb-lg-8"
+  [@routeTransition]="route.snapshot.data">
   <router-outlet></router-outlet>
 </div>

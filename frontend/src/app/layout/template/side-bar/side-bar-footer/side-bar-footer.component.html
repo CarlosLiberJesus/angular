@@ -1,13 +1,8 @@
 <a
-  href="#"
-  class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
-  data-bs-toggle="tooltip"
-  data-bs-trigger="hover"
-  data-bs-dismiss-="click"
-  title="Metronic Docs & Components">
+  [routerLink]="['/documentacao']"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: false }"
+  class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100">
   <span class="btn-label fw-bolder"> Doc Técnica </span>
-  <app-metronic-icon
-    [icon]="docIcon"
-    class="ps-2"
-    style="display: flex"></app-metronic-icon>
+  <app-metronic-icon [icon]="docIcon" class="ps-2"></app-metronic-icon>
 </a>

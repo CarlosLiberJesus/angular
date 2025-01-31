@@ -29,9 +29,10 @@
       <!--begin::Main-->
       <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
         <!--begin::Content wrapper-->
-        <div class="d-flex flex-column flex-column-fluid">
+        <div class="d-flex flex-column flex-column-fluid mb-lg-5">
           <app-template-tool-bar
             class="app-toolbar py-3 py-lg-6"
+            [appToolbarLayout]="toolbarLayout"
             id="kt_app_toolbar"></app-template-tool-bar>
 
           <app-template-content id=" kt_app_content" class="app-content">

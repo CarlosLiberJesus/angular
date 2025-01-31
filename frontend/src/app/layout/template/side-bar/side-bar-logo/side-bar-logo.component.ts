@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Renderer2 } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import {
   IButton,
   MetronicButtonComponent,
@@ -6,7 +7,7 @@ import {
 
 @Component({
   selector: 'app-template-side-bar-logo',
-  imports: [MetronicButtonComponent],
+  imports: [MetronicButtonComponent, RouterModule],
   templateUrl: './side-bar-logo.component.html',
   styleUrl: './side-bar-logo.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

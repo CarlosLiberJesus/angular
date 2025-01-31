@@ -53,7 +53,10 @@ export class ThemeSwitcherComponent {
       ],
       iconFirst: {
         library: 'ki-duotone',
-        value: this.translateThemeName(this.themeName) === 'dark' ? 'ki-moon' : 'ki-night-day',
+        value:
+          this.translateThemeName(this.themeName) === 'dark'
+            ? 'ki-moon'
+            : 'ki-night-day',
         css: ['fs-1'],
       },
     };

@@ -24,19 +24,21 @@ import { PageTitleComponent } from '../../partials/page-title/page-title.compone
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TemplateToolBarComponent {
-  appPageTitleDirection: string = 'column'; // TODO exemplos diff
-  @Input() appToolbarLayout!:
-    | 'classic'
-    | 'accounting'
-    | 'extended'
-    | 'reports'
-    | 'saas'
-    | 'html'
-    | 'none'; // TODO: Add more layouts
+  appPageTitleDirection: string = 'column';
+  @Input() appToolbarLayout!: string;
+  /* 'classic' | 'accounting' | 'extended' | 'reports' | 'saas'; */
 
   showPageTitle() {
     const viewsWithPageTitles = ['classic', 'reports', 'saas'];
-    // TODO: Why the validation ?
+    if (
+      ['accounting', 'extended', 'reports', 'saas'].includes(
+        this.appToolbarLayout
+      )
+    ) {
+      document.body.setAttribute('data-kt-app-toolbar-fixed', 'true');
+    } else {
+      document.body.removeAttribute('data-kt-app-toolbar-fixed');
+    }
     return viewsWithPageTitles.some(t => t === this.appToolbarLayout);
   }
 }

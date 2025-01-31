@@ -5,7 +5,7 @@ import { PublicPageDocumentationMetronicComponent } from './metronic/metronic.co
 import { PublicPageDocumentationComponent } from './documentation.component';
 import { PublicPageDocumentationAngularComponent } from './angular/angular.component';
 import { PublicPageDocumentationLaravelComponent } from './laravel/laravel.component';
-import { PageMetaService } from '../../../services/page-meta.service';
+import { DocumentationModel } from './documentation.model';
 
 @NgModule({
   declarations: [],
@@ -15,9 +15,9 @@ import { PageMetaService } from '../../../services/page-meta.service';
     PublicPageDocumentationComponent,
     PublicPageDocumentationMetronicComponent,
     PublicPageDocumentationAngularComponent,
-    PublicPageDocumentationLaravelComponent
+    PublicPageDocumentationLaravelComponent,
   ],
-  providers: [PageMetaService],
+  providers: [DocumentationModel],
   exports: [PublicPageDocumentationComponent],
 })
 export class DocumentationModule {}

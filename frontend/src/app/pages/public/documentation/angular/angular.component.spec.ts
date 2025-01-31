@@ -8,9 +8,8 @@ describe('PublicPageDocumentationAngularComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PublicPageDocumentationAngularComponent]
-    })
-    .compileComponents();
+      imports: [PublicPageDocumentationAngularComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PublicPageDocumentationAngularComponent);
     component = fixture.componentInstance;

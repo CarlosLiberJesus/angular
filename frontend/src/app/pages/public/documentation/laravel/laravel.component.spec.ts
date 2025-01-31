@@ -8,9 +8,8 @@ describe('PublicPageDocumentationLaravelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PublicPageDocumentationLaravelComponent]
-    })
-    .compileComponents();
+      imports: [PublicPageDocumentationLaravelComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PublicPageDocumentationLaravelComponent);
     component = fixture.componentInstance;

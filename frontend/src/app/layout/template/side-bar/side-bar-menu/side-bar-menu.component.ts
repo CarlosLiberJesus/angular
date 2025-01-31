@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IIcon, MetronicIconComponent } from '@carlosliberjesus/lib-metronic';
 
@@ -27,9 +34,15 @@ export class TemplateSideBarMenuComponent {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const targetElement = event.target as HTMLElement;
-    const toggleButton = document.querySelector('#kt_app_sidebar_mobile_toggle');
+    const toggleButton = document.querySelector(
+      '#kt_app_sidebar_mobile_toggle'
+    );
 
-    if (toggleButton && (toggleButton.contains(targetElement) || this.elementRef.nativeElement.contains(targetElement))) {
+    if (
+      toggleButton &&
+      (toggleButton.contains(targetElement) ||
+        this.elementRef.nativeElement.contains(targetElement))
+    ) {
       return;
     }
 

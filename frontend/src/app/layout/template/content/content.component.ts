@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { routeTransition } from '../../../app.routes';
 
 @Component({
   selector: 'app-template-content',
@@ -8,5 +9,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [routeTransition],
 })
-export class TemplateContentComponent {}
+export class TemplateContentComponent {
+  constructor(protected route: ActivatedRoute) {}
+
+  closeAlert(): void {}
+}

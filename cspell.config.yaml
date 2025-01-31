@@ -19,6 +19,7 @@ dictionaries:
   - pt_PT
 words:
   - bewhyorg
+  - Laravel
   - metronic
 ignoreWords: []
 import:

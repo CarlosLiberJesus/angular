@@ -1,48 +1,85 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Observable, Subject, takeUntil } from 'rxjs';
-import { PageLink, PageMetaService } from '../../../services/page-meta.service';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { RouterModule } from '@angular/router';
+import {
+  IPageTitle,
+  PageTitleService,
+} from '../../../services/page-title.service';
+import {
+  IBreadcrumbs,
+  MetronicBreadcrumbsComponent,
+} from '@carlosliberjesus/lib-metronic';
 
 @Component({
   selector: 'app-page-title',
   standalone: true,
-  imports: [CommonModule],
-  providers: [PageMetaService],
+  imports: [CommonModule, RouterModule, MetronicBreadcrumbsComponent],
   templateUrl: './page-title.component.html',
   styleUrl: './page-title.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageTitleComponent implements OnInit, OnDestroy {
-  private destroy$: Subject<boolean> = new Subject<boolean>();
-
+  private subscription!: Subscription;
   @Input() appPageTitleDirection: string = '';
 
-  title$!: Observable<string>;
-  description$!: Observable<string>;
-  bc$!: Observable<Array<PageLink>>;
+  pageTitle!: IPageTitle | null;
+  breadcrumbs: IBreadcrumbs = {
+    name: 'breadcrumbs-demo',
+    items: [],
+    css: ['breadcrumb-line my-0 pt-1'],
+  };
+  animationClass: string = '';
 
-  constructor(private pageMeta: PageMetaService) {}
+  constructor(
+    private pageTitleService: PageTitleService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    this.title$ = this.pageMeta.title
-      .asObservable()
-      .pipe(takeUntil(this.destroy$));
-    this.description$ = this.pageMeta.description
-      .asObservable()
-      .pipe(takeUntil(this.destroy$));
-    this.bc$ = this.pageMeta.breadcrumbs
-      .asObservable()
-      .pipe(takeUntil(this.destroy$));
+    let started = false;
+    this.subscription = this.pageTitleService
+      .getPageTitle()
+      .subscribe((pageTitle: IPageTitle | null) => {
+        if (!started && !pageTitle) {
+          started = true;
+          return;
+        }
+        this.animateOut();
+        if (pageTitle) {
+          this.pageTitle = pageTitle;
+          this.breadcrumbs = {
+            ...this.breadcrumbs,
+            items: pageTitle?.breadcrumbs || [],
+          };
+          this.animationClass =
+            'animate__animated animate__flipInX animate__faster';
+          this.cdr.detectChanges();
+        } else {
+          setTimeout(() => {
+            this.pageTitle = null;
+            this.cdr.detectChanges();
+          }, 400);
+        }
+      });
   }
 
-  ngOnDestroy() {
-    this.destroy$.next(true);
-    this.destroy$.complete();
+  private animateOut() {
+    this.animationClass = 'animate__animated animate__flipOutX animate__faster';
+
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 1);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
