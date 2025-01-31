@@ -18,7 +18,7 @@ import { PublicPageSiteMapComponent } from './site-map/site-map.component';
     ThemeSwitcherComponent,
     PageTitleComponent,
     TemplateScrollTopComponent,
-    PublicPageSiteMapComponent
+    PublicPageSiteMapComponent,
   ],
 })
 export class PartialsModule {}

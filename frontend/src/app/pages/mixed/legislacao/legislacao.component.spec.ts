@@ -8,9 +8,8 @@ describe('LegislacaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MixedPageLegislacaoComponent]
-    })
-    .compileComponents();
+      imports: [MixedPageLegislacaoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MixedPageLegislacaoComponent);
     component = fixture.componentInstance;

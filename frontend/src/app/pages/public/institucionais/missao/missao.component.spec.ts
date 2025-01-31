@@ -8,9 +8,8 @@ describe('PublicPageInstitucionaisMissaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PublicPageInstitucionaisMissaoComponent]
-    })
-    .compileComponents();
+      imports: [PublicPageInstitucionaisMissaoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PublicPageInstitucionaisMissaoComponent);
     component = fixture.componentInstance;

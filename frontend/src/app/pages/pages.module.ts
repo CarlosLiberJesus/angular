@@ -6,7 +6,12 @@ import { MixedPagesModule } from './mixed/mixed.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PublicPagesModule, PrivatePagesModule, MixedPagesModule],
+  imports: [
+    CommonModule,
+    PublicPagesModule,
+    PrivatePagesModule,
+    MixedPagesModule,
+  ],
   exports: [PublicPagesModule, PrivatePagesModule, MixedPagesModule],
 })
 export class PagesModule {}

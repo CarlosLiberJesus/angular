@@ -6,9 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './contactos.component.html',
   styleUrl: './contactos.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PublicPageInstitucionaisContactosComponent {
-
-}
+export class PublicPageInstitucionaisContactosComponent {}

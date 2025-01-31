@@ -6,9 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './peticoes.component.html',
   styleUrl: './peticoes.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MixedPagePeticoesComponent {
-
-}
+export class MixedPagePeticoesComponent {}

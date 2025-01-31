@@ -21,7 +21,7 @@ import { IIcon, MetronicIconComponent } from '@carlosliberjesus/lib-metronic';
 export class TemplateSideBarMenuComponent {
   @Output() closeMobileMenu = new EventEmitter<void>();
   @ViewChildren('submenu') submenus!: QueryList<ElementRef>;
-  
+
   homeIcon: IIcon = {
     library: 'ki-duotone',
     value: 'ki-home-2',
@@ -38,12 +38,11 @@ export class TemplateSideBarMenuComponent {
     css: ['fs-2'],
   };
 
-  
   constructor(private elementRef: ElementRef) {}
 
   toggleSubmenu(submenu: HTMLDivElement) {
     console.log(submenu);
-    this.submenus.forEach((sub) => {
+    this.submenus.forEach(sub => {
       console.log(sub);
       //if (sub !== submenu) {
       sub.nativeElement.classList.remove('here');

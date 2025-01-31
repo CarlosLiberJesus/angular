@@ -6,8 +6,6 @@ import { FiscalizacaoModule } from './fiscalizacao/fiscalizacao.module';
 import { DocumentacaoModule } from './documentacao/documentacao.module';
 import { MixedPageMixedComponent } from './mixed.component';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -16,13 +14,14 @@ import { MixedPageMixedComponent } from './mixed.component';
     LegislacaoModule,
     FiscalizacaoModule,
     DocumentacaoModule,
-    MixedPageMixedComponent
-  ], exports: [
+    MixedPageMixedComponent,
+  ],
+  exports: [
     PeticoesModule,
     LegislacaoModule,
     FiscalizacaoModule,
-    DocumentacaoModule,  
-    MixedPageMixedComponent
+    DocumentacaoModule,
+    MixedPageMixedComponent,
   ],
 })
-export class MixedPagesModule { }
+export class MixedPagesModule {}

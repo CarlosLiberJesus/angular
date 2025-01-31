@@ -7,8 +7,6 @@ import { PublicPageInstitucionaisEquipaComponent } from './equipa/equipa.compone
 import { PublicPageInstitucionaisContactosComponent } from './contactos/contactos.component';
 import { InstitucionaisRoutingModule } from './institucionais-routing.module';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -18,13 +16,14 @@ import { InstitucionaisRoutingModule } from './institucionais-routing.module';
     PublicPageInstitucionaisPrivacidadeComponent,
     PublicPageInstitucionaisMissaoComponent,
     PublicPageInstitucionaisEquipaComponent,
-    PublicPageInstitucionaisContactosComponent
-  ], exports: [
+    PublicPageInstitucionaisContactosComponent,
+  ],
+  exports: [
     PublicPageInstitucionaisComponent,
     PublicPageInstitucionaisPrivacidadeComponent,
     PublicPageInstitucionaisMissaoComponent,
     PublicPageInstitucionaisEquipaComponent,
-    PublicPageInstitucionaisContactosComponent
-  ]
+    PublicPageInstitucionaisContactosComponent,
+  ],
 })
-export class InstitucionaisModule { }
+export class InstitucionaisModule {}

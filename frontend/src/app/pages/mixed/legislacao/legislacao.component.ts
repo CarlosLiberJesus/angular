@@ -6,9 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './legislacao.component.html',
   styleUrl: './legislacao.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MixedPageLegislacaoComponent {
-
-}
+export class MixedPageLegislacaoComponent {}

@@ -14,7 +14,10 @@ const publicInstituicioniasRoutes: Routes = [
   { path: 'missao', component: PublicPageInstitucionaisMissaoComponent },
   { path: 'equipa', component: PublicPageInstitucionaisEquipaComponent },
   { path: 'contactos', component: PublicPageInstitucionaisContactosComponent },
-  { path: 'privacidade', component: PublicPageInstitucionaisPrivacidadeComponent },
+  {
+    path: 'privacidade',
+    component: PublicPageInstitucionaisPrivacidadeComponent,
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

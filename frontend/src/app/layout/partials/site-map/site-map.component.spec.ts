@@ -8,9 +8,8 @@ describe('SiteMapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SiteMapComponent]
-    })
-    .compileComponents();
+      imports: [SiteMapComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SiteMapComponent);
     component = fixture.componentInstance;

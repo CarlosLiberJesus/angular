@@ -6,9 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './institucionais.component.html',
   styleUrl: './institucionais.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PublicPageInstitucionaisComponent {
-
-}
+export class PublicPageInstitucionaisComponent {}

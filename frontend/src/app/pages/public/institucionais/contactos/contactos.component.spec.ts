@@ -8,11 +8,12 @@ describe('PublicPageInstitucionaisContactosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PublicPageInstitucionaisContactosComponent]
-    })
-    .compileComponents();
+      imports: [PublicPageInstitucionaisContactosComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(PublicPageInstitucionaisContactosComponent);
+    fixture = TestBed.createComponent(
+      PublicPageInstitucionaisContactosComponent
+    );
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,7 +6,16 @@ import { InstitucionaisModule } from './institucionais/institucionais.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PublicPageHomepageComponent, DocumentationModule, InstitucionaisModule],
-  exports: [PublicPageHomepageComponent, DocumentationModule, InstitucionaisModule],
+  imports: [
+    CommonModule,
+    PublicPageHomepageComponent,
+    DocumentationModule,
+    InstitucionaisModule,
+  ],
+  exports: [
+    PublicPageHomepageComponent,
+    DocumentationModule,
+    InstitucionaisModule,
+  ],
 })
 export class PublicPagesModule {}

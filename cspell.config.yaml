@@ -21,6 +21,7 @@ words:
   - bewhyorg
   - Laravel
   - metronic
+  - scrolltop
 ignoreWords: []
 import:
   - node_modules/@cspell/dict-pt-pt/cspell-ext.json

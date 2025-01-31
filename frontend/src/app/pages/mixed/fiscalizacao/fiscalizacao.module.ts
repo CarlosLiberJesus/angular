@@ -2,13 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FiscalizacaoRoutingModule } from './fiscalizacao-routing.module';
 
-
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    FiscalizacaoRoutingModule
-  ]
+  imports: [CommonModule, FiscalizacaoRoutingModule],
 })
-export class FiscalizacaoModule { }
+export class FiscalizacaoModule {}
