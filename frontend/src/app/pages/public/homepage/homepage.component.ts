@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PageTitleService } from '../../../services/page-title.service';
 
 @Component({
-  selector: 'app-page-homepage',
+  selector: 'app-public-page-homepage',
   standalone: true,
   imports: [],
   templateUrl: './homepage.component.html',

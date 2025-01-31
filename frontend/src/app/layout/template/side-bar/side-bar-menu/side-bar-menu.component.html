@@ -34,18 +34,81 @@
       <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
           <span class="menu-section text-muted text-uppercase fs-8 ls-1"
-            >Serviços</span
+            >Institucionais</span
           >
         </div>
       </div>
+      <!-- Institucionais -->
+      <div
+      data-kt-menu-trigger="click"
+      class="menu-accordion menu-item" #submenu>
+        <span class="menu-link" (click)="toggleSubmenu(submenu)">
+          <span class="menu-icon">
+            <app-metronic-icon [icon]="usIcon"></app-metronic-icon>
+          </span>
+          <span class="menu-title">
+            Quem Somos?
+          </span>
+          <span class="menu-arrow"></span>
+        </span>
+        <div
+          routerLinkActive="menu-active-bg"
+          class="menu-sub menu-sub-accordion">
+          <div class="menu-item">
+            <a routerLinkActive="" routerLink="/institucionais/equipa" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Equipa</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <!-- Pages -->
+      <!-- Separator -->
+      <div class="menu-item">
+        <div class="menu-content pt-8 pb-2">
+          <span class="menu-section text-muted text-uppercase fs-8 ls-1"
+            >Operações</span
+          >
+        </div>
+      </div>
+      <!-- Serviços -->
+      <div
+      data-kt-menu-trigger="click"
+      class="menu-accordion menu-item"  #submenu>
+        <span class="menu-link" (click)="toggleSubmenu(submenu)">
+          <span class="menu-icon">
+            <app-metronic-icon [icon]="servicesIcon"></app-metronic-icon>
+          </span>
+          <span class="menu-title">
+            Serviços
+          </span>
+          <span class="menu-arrow"></span>
+        </span>
+        <div
+          routerLinkActive=""
+          class="menu-sub menu-sub-accordion">
+          <div class="menu-item">
+            <a routerLinkActive="" 
+            routerLink="/documentacao" 
+            class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Documentação</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INI: TO DELETE -->
       <div
         data-kt-menu-trigger="click"
         class="here hover menu-accordion menu-item show">
         <span class="menu-link">
           <span class="menu-icon">
-            <app-metronic-icon [icon]="usIntro"></app-metronic-icon>
+            <app-metronic-icon [icon]="usIcon"></app-metronic-icon>
           </span>
           <span data-link="/crafted/account" class="menu-title">
             Quem Somos?
@@ -74,6 +137,9 @@
           </div>
         </div>
       </div>
+      <!-- FIM: TO DELETE -->
+
+      
     </div>
   </div>
 </div>

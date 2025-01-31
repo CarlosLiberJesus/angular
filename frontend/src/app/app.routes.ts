@@ -7,6 +7,7 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { PublicPageSiteMapComponent } from './layout/partials/site-map/site-map.component';
 
 export const routeTransition = trigger('routeTransition', [
   transition('* => *', [
@@ -35,11 +36,47 @@ export const routeTransition = trigger('routeTransition', [
 
 export const routes: Routes = [
   { path: '', component: PublicPageHomepageComponent },
+  { path: 'mapa-site', component: PublicPageSiteMapComponent },
   {
-    path: 'documentacao',
+    path: 'institucionais',
+    loadChildren: () =>
+      import('./pages/public/institucionais/institucionais.module').then(
+        m => m.InstitucionaisModule
+      ),
+  },
+  {
+    path: 'documentation',
     loadChildren: () =>
       import('./pages/public/documentation/documentation.module').then(
         m => m.DocumentationModule
+      ),
+  },
+  {
+    path: 'documentacao',
+    loadChildren: () =>
+      import('./pages/mixed/documentacao/documentacao.module').then(
+        m => m.DocumentacaoModule
+      ),
+  },
+  {
+    path: 'legislacao',
+    loadChildren: () =>
+      import('./pages/mixed/legislacao/legislacao.module').then(
+        m => m.LegislacaoModule
+      ),
+  },
+  {
+    path: 'fiscalizacao',
+    loadChildren: () =>
+      import('./pages/mixed/fiscalizacao/fiscalizacao.module').then(
+        m => m.FiscalizacaoModule
+      ),
+  },
+  {
+    path: 'peticoes',
+    loadChildren: () =>
+      import('./pages/mixed/peticoes/peticoes.module').then(
+        m => m.PeticoesModule
       ),
   },
 ];

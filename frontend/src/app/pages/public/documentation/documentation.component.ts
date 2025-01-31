@@ -15,9 +15,6 @@ import {
   IDocumentUrl,
   MetronicButtonGroupComponent,
 } from '@carlosliberjesus/lib-metronic';
-import { PageTitleService } from './../../../services/page-title.service';
-import { TitleToolbarService } from '../../../services/title-toolbar.service';
-import { DocumentationModel } from './documentation.model';
 import { filter, Subject, takeUntil } from 'rxjs';
 import {
   trigger,
@@ -26,9 +23,12 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { PublicPageDocumentationMetronicComponent } from './metronic/metronic.component';
-import { PublicPageDocumentationLaravelComponent } from './laravel/laravel.component';
 import { PublicPageDocumentationAngularComponent } from './angular/angular.component';
+import { PublicPageDocumentationLaravelComponent } from './laravel/laravel.component';
+import { PublicPageDocumentationMetronicComponent } from './metronic/metronic.component';
+import { PageTitleService } from './../../../services/page-title.service';
+import { TitleToolbarService } from '../../../services/title-toolbar.service';
+import { DocumentationModel } from './documentation.model';
 
 @Component({
   selector: 'app-public-page-documentation',

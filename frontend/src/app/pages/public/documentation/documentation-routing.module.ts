@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicPageDocumentationComponent } from './documentation.component';
-//import { PublicPageDocumentationMetronicComponent } from './metronic/metronic.component';
-//import { PublicPageDocumentationAngularComponent } from './angular/angular.component';
-//import { PublicPageDocumentationLaravelComponent } from './laravel/laravel.component';
 
 const publicDocumentationRoutes: Routes = [
   {
