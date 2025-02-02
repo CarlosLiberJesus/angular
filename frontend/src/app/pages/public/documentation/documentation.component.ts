@@ -89,6 +89,12 @@ export class PublicPageDocumentationComponent
       title: 'Documentação',
       description: 'Dados técnicos de suporte a programadores',
       breadcrumbs: this.documentationModel.breadcrumbs,
+      socialMeta: {
+        title: 'BeWhyOrg - Tech Docs',
+        description: 'Dados técnicos de suporte a programadores',
+        image: 'img/banners/src_code.avif',
+        url: 'https://bewhy.org/documentation',
+      },
     });
 
     this.router.events
@@ -116,7 +122,7 @@ export class PublicPageDocumentationComponent
     } else {
       this.urlChoices = {
         main: 'documentacao',
-        element: 'default',
+        element: 'intro',
       };
       this.techForm = new FormArray([new FormControl('default')], []);
     }

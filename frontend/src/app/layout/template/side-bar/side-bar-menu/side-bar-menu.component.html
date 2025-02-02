@@ -19,10 +19,7 @@
       <!-- Dashboard -->
       <div class="menu-item">
         <!-- TODO set active -->
-        <a
-          class="menu-link without-sub"
-          routerLink="/"
-          routerLinkActive="active">
+        <a class="menu-link without-sub" routerLink="/" #links>
           <span class="menu-icon">
             <app-metronic-icon [icon]="homeIcon"></app-metronic-icon>
           </span>
@@ -41,21 +38,20 @@
       <!-- Institucionais -->
       <div
         data-kt-menu-trigger="click"
-        class="menu-accordion menu-item"
-        #submenu>
-        <span class="menu-link" (click)="toggleSubmenu(submenu)">
+        class="menu-accordion menu-item menu-quem-somos"
+        #submenu
+        (click)="toggleSubmenu($event)">
+        <span class="menu-link">
           <span class="menu-icon">
             <app-metronic-icon [icon]="usIcon"></app-metronic-icon>
           </span>
           <span class="menu-title"> Quem Somos? </span>
           <span class="menu-arrow"></span>
         </span>
-        <div
-          routerLinkActive="menu-active-bg"
-          class="menu-sub menu-sub-accordion">
+        <div class="menu-sub menu-sub-accordion">
           <div class="menu-item">
             <a
-              routerLinkActive=""
+              #links
               routerLink="/institucionais/equipa"
               class="menu-link without-sub">
               <span class="menu-bullet">
@@ -64,80 +60,90 @@
               <span class="menu-title">Equipa</span>
             </a>
           </div>
-        </div>
-      </div>
-
-      <!-- Separator -->
-      <div class="menu-item">
-        <div class="menu-content pt-8 pb-2">
-          <span class="menu-section text-muted text-uppercase fs-8 ls-1"
-            >Operações</span
-          >
-        </div>
-      </div>
-      <!-- Serviços -->
-      <div
-        data-kt-menu-trigger="click"
-        class="menu-accordion menu-item"
-        #submenu>
-        <span class="menu-link" (click)="toggleSubmenu(submenu)">
-          <span class="menu-icon">
-            <app-metronic-icon [icon]="servicesIcon"></app-metronic-icon>
-          </span>
-          <span class="menu-title"> Serviços </span>
-          <span class="menu-arrow"></span>
-        </span>
-        <div routerLinkActive="" class="menu-sub menu-sub-accordion">
           <div class="menu-item">
             <a
-              routerLinkActive=""
-              routerLink="/documentacao"
+              #links
+              routerLink="/institucionais/missao"
               class="menu-link without-sub">
               <span class="menu-bullet">
                 <span class="bullet bullet-dot"></span>
               </span>
-              <span class="menu-title">Documentação</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- INI: TO DELETE -->
-      <div
-        data-kt-menu-trigger="click"
-        class="here hover menu-accordion menu-item show">
-        <span class="menu-link">
-          <span class="menu-icon">
-            <app-metronic-icon [icon]="usIcon"></app-metronic-icon>
-          </span>
-          <span data-link="/crafted/account" class="menu-title">
-            Quem Somos?
-          </span>
-          <span class="menu-arrow"></span>
-        </span>
-        <div
-          routerLinkActive="menu-active-bg"
-          class="menu-sub menu-sub-accordion show"
-          kt-hidden-height="83">
-          <div class="menu-item">
-            <a routerLinkActive="" routerLink="#" class="menu-link without-sub">
-              <span class="menu-bullet">
-                <span class="bullet bullet-dot"></span>
-              </span>
-              <span class="menu-title">Equipa</span>
+              <span class="menu-title">Missao</span>
             </a>
           </div>
           <div class="menu-item">
-            <a routerLinkActive="" routerLink="#" class="menu-link without-sub">
+            <a
+              #links
+              routerLink="/institucionais/privacidade"
+              class="menu-link without-sub">
               <span class="menu-bullet">
                 <span class="bullet bullet-dot"></span>
               </span>
               <span class="menu-title">Privacidade</span>
             </a>
           </div>
+          <div class="menu-item">
+            <a
+              #links
+              routerLink="/institucionais/contactos"
+              class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Contactos</span>
+            </a>
+          </div>
         </div>
       </div>
-      <!-- FIM: TO DELETE -->
+
+      <!-- Serviços -->
+      <div
+        data-kt-menu-trigger="click"
+        class="menu-accordion menu-item menu-servicos"
+        #submenu
+        (click)="toggleSubmenu($event)">
+        <span class="menu-link">
+          <span class="menu-icon">
+            <app-metronic-icon [icon]="servicesIcon"></app-metronic-icon>
+          </span>
+          <span class="menu-title"> Serviços </span>
+          <span class="menu-arrow"></span>
+        </span>
+        <div class="menu-sub menu-sub-accordion">
+          <div class="menu-item">
+            <a #links routerLink="/documentacao" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Documentação</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a #links routerLink="/fiscalizacao" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Fiscalização</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a #links routerLink="/legislacao" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Legislação</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a #links routerLink="/peticoes" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Petições</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

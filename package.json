@@ -6,8 +6,10 @@
     "nohoist": ["frontend/**"]
   },
   "devDependencies": {
+    "@angular-eslint/builder": "^19.0.2",
     "@angular-eslint/eslint-plugin": "^19.0.2",
     "@angular-eslint/eslint-plugin-template": "^19.0.2",
+    "@angular-eslint/schematics": "^19.0.2",
     "@angular-eslint/template-parser": "^19.0.2",
     "@cspell/dict-pt-pt": "^3.0.4",
     "@eslint/eslintrc": "^3.2.0",

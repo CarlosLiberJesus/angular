@@ -4,6 +4,8 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
 import { PageTitleComponent } from './page-title/page-title.component';
 import { TemplateScrollTopComponent } from './scroll-top/scroll-top.component';
 import { PublicPageSiteMapComponent } from './site-map/site-map.component';
+import { TemplateSplashScreenComponent } from './splash-screen/splash-screen.component';
+import { SplashScreenService } from '../../services/splash-screen.service';
 
 @NgModule({
   declarations: [],
@@ -13,12 +15,15 @@ import { PublicPageSiteMapComponent } from './site-map/site-map.component';
     PageTitleComponent,
     TemplateScrollTopComponent,
     PublicPageSiteMapComponent,
+    TemplateSplashScreenComponent,
   ],
+  providers: [SplashScreenService],
   exports: [
     ThemeSwitcherComponent,
     PageTitleComponent,
     TemplateScrollTopComponent,
     PublicPageSiteMapComponent,
+    TemplateSplashScreenComponent,
   ],
 })
 export class PartialsModule {}

@@ -2,6 +2,7 @@
   <div class="app-container container-fluid">
     <!--begin::Alert-->
     <div
+      *ngIf="!hideMobileAlert"
       class="alert alert-dismissible bg-light-warning d-flex flex-column flex-sm-row p-5">
       <!--begin::Icon-->
       <i
@@ -44,9 +45,12 @@
     <!--end::Alert-->
   </div>
 </div>
+
 <div
   id="kt_app_content_container"
   class="app-container container-fluid mb-3 mb-lg-8"
-  [@routeTransition]="route.snapshot.data">
+  [@routeTransition]="route.snapshot.data"
+  (@routeTransition.start)="onAnimationEvent($event)"
+  (@routeTransition.done)="onAnimationEvent($event)">
   <router-outlet></router-outlet>
 </div>

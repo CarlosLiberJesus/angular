@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { TitleToolbarService } from '../title-toolbar.service';
+import { SplashScreenService } from '../splash-screen.service';
 
-describe('TitleToolbarService', () => {
-  let service: TitleToolbarService;
+describe('SplashScreenService', () => {
+  let service: SplashScreenService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TitleToolbarService);
+    service = TestBed.inject(SplashScreenService);
   });
 
   it('should be created', () => {

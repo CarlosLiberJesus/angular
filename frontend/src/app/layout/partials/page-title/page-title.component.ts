@@ -53,7 +53,7 @@ export class PageTitleComponent implements OnInit, OnDestroy {
           return;
         }
         this.animateOut();
-        if (pageTitle) {
+        if (pageTitle && !this.pageTitle) {
           this.pageTitle = pageTitle;
           this.breadcrumbs = {
             ...this.breadcrumbs,
@@ -62,6 +62,17 @@ export class PageTitleComponent implements OnInit, OnDestroy {
           this.animationClass =
             'animate__animated animate__flipInX animate__faster';
           this.cdr.detectChanges();
+        } else if (pageTitle && this.pageTitle) {
+          setTimeout(() => {
+            this.pageTitle = pageTitle;
+            this.breadcrumbs = {
+              ...this.breadcrumbs,
+              items: pageTitle?.breadcrumbs || [],
+            };
+            this.animationClass =
+              'animate__animated animate__flipInX animate__faster';
+            this.cdr.detectChanges();
+          }, 200);
         } else {
           setTimeout(() => {
             this.pageTitle = null;
