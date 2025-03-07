@@ -7,7 +7,7 @@ import {
   style,
   animate,
 } from '@angular/animations';
-import { PublicPageSiteMapComponent } from './layout/partials/site-map/site-map.component';
+import { PublicPageSiteMapComponent } from './pages/public/site-map/site-map.component';
 
 export const routeTransition = trigger('routeTransition', [
   transition('* => *', [
@@ -51,18 +51,12 @@ export const routes: Routes = [
         m => m.DocumentationModule
       ),
   },
+  /*
   {
     path: 'documentacao',
     loadChildren: () =>
       import('./pages/mixed/documentacao/documentacao.module').then(
         m => m.DocumentacaoModule
-      ),
-  },
-  {
-    path: 'legislacao',
-    loadChildren: () =>
-      import('./pages/mixed/legislacao/legislacao.module').then(
-        m => m.LegislacaoModule
       ),
   },
   {
@@ -77,6 +71,21 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/mixed/peticoes/peticoes.module').then(
         m => m.PeticoesModule
+      ),
+  },
+*/
+  {
+    path: 'legislacao',
+    loadChildren: () =>
+      import('./pages/mixed/legislacao/legislacao.module').then(
+        m => m.LegislacaoModule
+      ),
+  },
+  {
+    path: 'cidadaos',
+    loadChildren: () =>
+      import('./pages/mixed/cidadaos/cidadaos.module').then(
+        m => m.CidadaosModule
       ),
   },
 ];

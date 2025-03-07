@@ -1,0 +1,53 @@
+<div class="card card-px-0 card-py-0">
+  <div class="card-body">
+    <app-metronic-html-table
+      [table]="table"
+      (pageChanged)="onPaginationChange($event)"></app-metronic-html-table>
+
+    <ng-template #tableTools>
+      <app-metronic-form-input
+        [input]="searchInput"
+        [control]="search"
+        (submitForm)="onSearch($event)"></app-metronic-form-input>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #rowTemplate let-row>
+  <td>
+    <div class="d-flex flex-column justify-content-center">
+      <a
+        [routerLink]="[
+          '/cidadaos/',
+          row.uuid
+        ]"
+        class="mb-1 text-gray-800 text-hover-ancap"
+        >{{row.nome }}
+      </a>
+    </div>
+  </td>
+  <td>
+    <div class="d-flex flex-column justify-content-center">
+      <span class="fw-bold text-gray-800"
+        >{{ row.data_nascimento }} / {{ row.data_falecimento }}</span
+      >
+    </div>
+  </td></ng-template
+>
+
+<ng-template #cardTemplate let-row>
+  <div class="row g-6 g-xl-9 mt-2 mb-5">
+    <div class="col-md-5 col-xxl-3" *ngFor="let data of row">
+      <div class="card">
+        <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+          <a href="#" class="fs-4 text-gray-800 text-hover-ancap fw-bold mb-0"
+            >{{data.nome }}</a
+          >
+          <div class="fw-semibold text-gray-500 mb-6">
+            {{ data.data_nascimento }} / {{ data.data_falecimento }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

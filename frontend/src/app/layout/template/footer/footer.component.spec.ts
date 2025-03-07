@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateFooterComponent } from './footer.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('TemplateFooterComponent', () => {
   let component: TemplateFooterComponent;
@@ -9,6 +11,14 @@ describe('TemplateFooterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TemplateFooterComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}), // Mock any route parameters if needed
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TemplateFooterComponent);

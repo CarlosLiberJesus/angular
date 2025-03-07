@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PageTitleService } from '../../../services/page-title.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PageTitleService } from '../../../services/page-title.service';
   styleUrl: './homepage.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PublicPageHomepageComponent implements OnInit {
+export class PublicPageHomepageComponent {
   constructor(private pageTitleService: PageTitleService) {}
 
   ngOnInit(): void {

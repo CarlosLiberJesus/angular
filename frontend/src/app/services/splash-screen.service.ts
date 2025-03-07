@@ -15,7 +15,6 @@ export class SplashScreenService {
   }
 
   setSplashScreen(value: boolean) {
-    console.log('setSplashScreen:', value);
     this.splashScreenSubject.next(value);
   }
 }

@@ -6,6 +6,7 @@ import { TemplateToolBarSaasComponent } from './saas/saas.component';
 import { TemplateToolBarAccountingComponent } from './accounting/accounting.component';
 import { TemplateToolBarExtendedComponent } from './extended/extended.component';
 import { PageTitleComponent } from '../../partials/page-title/page-title.component';
+import { TemplateMessageAlertComponent } from '../../partials/message-alert/message-alert.component';
 
 @Component({
   selector: 'app-template-tool-bar',
@@ -17,6 +18,7 @@ import { PageTitleComponent } from '../../partials/page-title/page-title.compone
     TemplateToolBarClassicComponent,
     TemplateToolBarAccountingComponent,
     TemplateToolBarExtendedComponent,
+    TemplateMessageAlertComponent,
     PageTitleComponent,
   ],
   templateUrl: './tool-bar.component.html',

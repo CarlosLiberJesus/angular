@@ -41,3 +41,5 @@ This Project is still not 100% GNU, you wont be able to run install due to priva
 
 - Dec 23, 2024 - First Setup, dev-tools & library structure
 - Jan 22, 2025 - Metronic-Lib v0.1.0
+- Fev 2, 2025 - Web Deploy
+- Mar 4, 2025 - Start Server Requests

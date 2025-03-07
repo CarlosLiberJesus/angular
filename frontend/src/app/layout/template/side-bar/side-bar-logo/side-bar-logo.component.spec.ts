@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateSideBarLogoComponent } from './side-bar-logo.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('TemplateSideBarLogoComponent', () => {
   let component: TemplateSideBarLogoComponent;
@@ -9,6 +11,14 @@ describe('TemplateSideBarLogoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TemplateSideBarLogoComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}), // Mock any route parameters if needed
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TemplateSideBarLogoComponent);

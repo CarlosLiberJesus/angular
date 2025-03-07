@@ -68,7 +68,7 @@
               <span class="menu-bullet">
                 <span class="bullet bullet-dot"></span>
               </span>
-              <span class="menu-title">Missao</span>
+              <span class="menu-title">Missão</span>
             </a>
           </div>
           <div class="menu-item">
@@ -104,6 +104,39 @@
         (click)="toggleSubmenu($event)">
         <span class="menu-link">
           <span class="menu-icon">
+            <app-metronic-icon [icon]="govIcon"></app-metronic-icon>
+          </span>
+          <span class="menu-title"> Governo </span>
+          <span class="menu-arrow"></span>
+        </span>
+        <div class="menu-sub menu-sub-accordion">
+          <div class="menu-item">
+            <a #links routerLink="/cidadaos" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Cidadãos</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a #links routerLink="/legislacao" class="menu-link without-sub">
+              <span class="menu-bullet">
+                <span class="bullet bullet-dot"></span>
+              </span>
+              <span class="menu-title">Legislação</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Serviços
+      <div
+        data-kt-menu-trigger="click"
+        class="menu-accordion menu-item menu-servicos"
+        #submenu
+        (click)="toggleSubmenu($event)">
+        <span class="menu-link">
+          <span class="menu-icon">
             <app-metronic-icon [icon]="servicesIcon"></app-metronic-icon>
           </span>
           <span class="menu-title"> Serviços </span>
@@ -127,14 +160,6 @@
             </a>
           </div>
           <div class="menu-item">
-            <a #links routerLink="/legislacao" class="menu-link without-sub">
-              <span class="menu-bullet">
-                <span class="bullet bullet-dot"></span>
-              </span>
-              <span class="menu-title">Legislação</span>
-            </a>
-          </div>
-          <div class="menu-item">
             <a #links routerLink="/peticoes" class="menu-link without-sub">
               <span class="menu-bullet">
                 <span class="bullet bullet-dot"></span>
@@ -143,7 +168,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

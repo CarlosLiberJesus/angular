@@ -31,12 +31,10 @@ export class TemplateSplashScreenComponent implements AfterViewInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((value: boolean) => {
         const element = this.splashScreenContainer.element.nativeElement;
-        console.log('value', value);
         if (value) {
           if (!booted) {
             booted = true;
           }
-          console.log('entra');
           setTimeout(() => {
             element.classList = '';
             //element.classList.add('animate__animated');
@@ -44,7 +42,6 @@ export class TemplateSplashScreenComponent implements AfterViewInit, OnDestroy {
             //element.classList.add('animate__fast');
           }, 1);
         } else {
-          console.log('else');
           setTimeout(() => {
             element.classList.add('animate__animated');
             element.classList.add('animate__zoomOut');

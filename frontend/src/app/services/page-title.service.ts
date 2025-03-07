@@ -22,7 +22,7 @@ export class PageTitleService {
     facebook: {
       title: 'BeWhyOrg',
       description: 'O código liberta... Programamos democracia.',
-      image: 'img/logos/ico-dark-white.png',
+      image: 'https://bewhy.org/img/logos/ico-dark-white.png',
       url: 'https://www.bewhy.org',
       type: 'website',
     },
@@ -30,7 +30,7 @@ export class PageTitleService {
       card: 'summary_large_image',
       title: 'BewhyOrg',
       description: 'O código liberta... Programamos democracia.',
-      image: 'img/logos/ico-dark-white.png',
+      image: 'https://bewhy.org/img/logos/ico-dark-white.png',
       site: '@BewhyOrg',
       alt: 'BewhyOrg',
       url: 'https://www.bewhy.org',

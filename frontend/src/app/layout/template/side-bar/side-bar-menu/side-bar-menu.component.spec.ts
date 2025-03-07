@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateSideBarMenuComponent } from './side-bar-menu.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('TemplateSideBarMenuComponent', () => {
   let component: TemplateSideBarMenuComponent;
@@ -9,6 +11,14 @@ describe('TemplateSideBarMenuComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TemplateSideBarMenuComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}), // Mock any route parameters if needed
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TemplateSideBarMenuComponent);

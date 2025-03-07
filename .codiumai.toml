@@ -1,0 +1,13 @@
+[test]
+test_directory = "frontend/src/app"
+code_style = "angular"
+
+[language.typescript]
+version = "4.9"
+
+[test.angular]
+framework = "jasmine"
+test_file_suffix = ".spec.ts"
+
+[test.generation]
+default_test_count = 10
